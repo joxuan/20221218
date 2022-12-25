@@ -2,14 +2,11 @@
 <html lang="en">
 <head>
     <style>
-        thead{
-background: red;
-height: 100pt;
-        }
         table {
+            width: 80%;
+            margin:auto;
             border-spacing: 0;
             border-collapse: collapse;
-            height: 200pt;
         }
         </style>
     <meta charset="UTF-8">
@@ -17,9 +14,20 @@ height: 100pt;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>html table</title>
 </head>
-<style>th, td {
-    border: 1px solid #000;
-}</style>
+<style>th, tr {
+            border: 1px solid #000;
+            padding: 10px;
+            background-color: #dedede;
+}
+tr td {
+            border: 1px solid #000;
+            padding: 10px;
+        }
+        tr:nth-child(even) td {
+            background: rgb(53, 113, 223);
+            color: #fff;
+        }
+</style>
 <body>
   <table>
 <thead>
