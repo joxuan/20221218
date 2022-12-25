@@ -8,10 +8,16 @@
 </head>
 <body>
     <div>
-    <form method="POST" action="https://book.niceinfos.com/frontend/assets/html_contact_form/api.php">
-       <input type="text" name="account" placeholder="請輸入帳號"> 
+        <label for="f-account">帳號</label>
     </div>
-    <input type="password" name="pwd" placeholder="請輸入密碼">
+    <div>
+    <form method="POST" action="https://book.niceinfos.com/frontend/assets/html_contact_form/api.php">
+       <input type="text" name="account" id="f-account" placeholder="請輸入帳號"> 
+    </div>
+    <div>
+        <label for="f-pwd">密碼</label>
+    </div>
+    <input type="password" name="pwd" id="f-pwd" placeholder="請輸入密碼">
     <div>
         <input type="date" name="date" placeholder="請輸入日期">
     </div>
@@ -30,6 +36,10 @@
             <option value="台中">台中</option>
             <option value="">高雄</option>
         </select>
+    </div>
+    <div>
+        <textarea name="remark" cols="30" rows="10" style="resize:none;>
+        </textarea>
     </div>
     </form>
 </body>
