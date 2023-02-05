@@ -32,6 +32,21 @@
   max-width: 95%;
   position: relative;
   z-index: 3;
+  font-weight: 800;
+}
+.ad-banner .content::-moz-selection {
+  background: blue;
+  color: yellow;
+}
+.ad-banner .content::selection {
+  background: blue;
+  color: yellow;
+}
+.ad-banner .content::first-line {
+  color: blue;
+}
+.ad-banner .content::first-letter {
+  font-size: 70px;
 }
 .ad-banner::before {
   content: "";

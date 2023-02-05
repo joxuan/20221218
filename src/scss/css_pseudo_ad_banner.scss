@@ -19,6 +19,21 @@
         max-width: 95%;
         position: relative;
         z-index: 3;
+        font-weight: 800;
+
+        
+    &::selection{
+        background: blue;
+        color: yellow;
+    }
+
+    &::first-line {
+        color: blue;
+    }
+
+    &::first-letter {
+        font-size: 70px;
+    }
     }
 
     &::before {
