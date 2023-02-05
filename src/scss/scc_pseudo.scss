@@ -1,0 +1,19 @@
+@import 'reset';
+
+.hover-demo {
+    width: 80%;
+    height: 100px;
+    background: rgb(0, 162, 255);
+    color: rgb(231, 218, 203);
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 600;
+
+    &:hover {
+        background: rgb(54, 54, 145);
+        color: #fff;
+    }
+}
