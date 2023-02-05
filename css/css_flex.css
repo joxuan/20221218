@@ -47,3 +47,13 @@
     justify-content: space-between;
     justify-content: space-evenly;
 }
+
+.align-content {
+    flex-wrap: wrap;
+    align-content: flex-start;
+    align-content: flex-end;
+    align-content: center;
+    align-content: space-around;
+    align-content: space-between;
+    align-content: space-evenly;
+}
