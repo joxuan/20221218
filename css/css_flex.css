@@ -1,0 +1,40 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.title {
+    text-align: center;
+}
+
+.flex {
+    display: flex;
+    background: yellow;
+    width: 90%;
+    margin: 20px auto;
+    height: 300px;
+}
+
+.flex-item {
+    width: 100px;
+    height: 100px;
+    background: #000;
+    color: #fff;
+    margin: 0 10px;
+}
+
+.direction {
+    flex-direction: row;
+    flex-direction: row-reverse;
+    flex-direction: column;
+    flex-direction: column-reverse;
+}
+
+.wrap {
+    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
+}
