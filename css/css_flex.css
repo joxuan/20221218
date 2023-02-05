@@ -57,3 +57,17 @@
     align-content: space-between;
     align-content: space-evenly;
 }
+
+.align-items {
+    align-items: stretch;
+    align-items: flex-start;
+    align-items: flex-end;
+    align-items: center;
+    align-items: baseline;
+}
+
+.jic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
