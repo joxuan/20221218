@@ -13,6 +13,11 @@
   margin: auto;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 body {
   background: #000;
 }
@@ -26,4 +31,11 @@ body {
   border-radius: 10px;
   border-top-right-radius: 0;
   border-top-left-radius: 0;
+}
+.header .menu {
+  list-style-type: none;
+  display: flex;
+}
+.header .menu li {
+  margin-right: 10px;
 }/*# sourceMappingURL=layout_1.css.map */

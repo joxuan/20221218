@@ -13,4 +13,13 @@ body {
     border-radius: 10px;
     border-top-right-radius: 0;
     border-top-left-radius: 0;
+
+    .menu {
+        list-style-type: none;
+        display: flex;
+
+        li {
+            margin-right: 10px;
+        }
+    }
 }

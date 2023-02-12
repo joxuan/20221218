@@ -13,6 +13,11 @@
   margin: auto;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .say-hi {
   padding: 10px;
 }
