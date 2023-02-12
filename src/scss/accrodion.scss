@@ -24,6 +24,11 @@
 
         .tab-content {
             padding: 10px;
+            display: none;
+        }
+
+        >input:checked+ .tab-content {
+            display: block;
         }
     }
 }

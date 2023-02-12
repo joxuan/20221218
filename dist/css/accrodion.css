@@ -37,4 +37,8 @@
 }
 .accrodion .tab .tab-content {
   padding: 10px;
+  display: none;
+}
+.accrodion .tab > input:checked + .tab-content {
+  display: block;
 }/*# sourceMappingURL=accrodion.css.map */
