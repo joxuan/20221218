@@ -12,8 +12,14 @@
             color: #fff;
             padding: 12px;
             font-size: 26px;
-            font-size: 700;
+            font-weight: 700;
             font-family: monospace;
+            cursor: pointer;
+            user-select: none;
+
+            &:hover {
+                background: #f82459;
+            }
         }
 
         .tab-content {
