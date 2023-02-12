@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *,
 *::after,
 *::before {
@@ -19,6 +20,9 @@
 .accrodion .tab {
   border: 2px solid rgb(112, 208, 211);
   border-bottom-width: 0;
+  /**
+  *   屬性選擇器解決方案
+  **/
 }
 .accrodion .tab:last-child {
   border-bottom-width: 2px;
@@ -62,6 +66,6 @@
 .accrodion .tab > input:checked ~ .tab-content {
   display: block;
 }
-.accrodion .tab > input {
+.accrodion .tab .tab-switch {
   display: none;
 }/*# sourceMappingURL=accrodion.css.map */
