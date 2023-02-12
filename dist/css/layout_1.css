@@ -23,6 +23,12 @@ body {
 }
 
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.header .header-content {
   background: #fff;
   display: flex;
   justify-content: space-between;
@@ -49,4 +55,6 @@ body {
 }
 .header .menu .en {
   font-size: 14px;
+  font-family: monospace;
+  text-transform: uppercase;
 }/*# sourceMappingURL=layout_1.css.map */
