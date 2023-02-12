@@ -17,7 +17,11 @@
   margin: 20px auto;
 }
 .accrodion .tab {
-  border: 1px solid rgb(25, 45, 224);
+  border: 2px solid rgb(112, 208, 211);
+  border-bottom-width: 0;
+}
+.accrodion .tab:last-child {
+  border-bottom-width: 2px;
 }
 .accrodion .tab > label {
   display: flex;
