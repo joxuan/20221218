@@ -24,16 +24,23 @@
   background: rgb(54, 73, 245);
   color: #fff;
   padding: 12px;
-  font-size: 26px;
   font-weight: 700;
   font-family: monospace;
   cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+  justify-content: space-between;
+  align-items: center;
+}
+.accrodion .tab > label > div {
+  font-size: 26px;
 }
 .accrodion .tab > label:hover {
   background: #f82459;
+}
+.accrodion .tab > label .close-icon {
+  display: none;
 }
 .accrodion .tab .tab-content {
   padding: 10px;
