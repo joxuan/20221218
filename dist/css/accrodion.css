@@ -19,7 +19,7 @@
 .accrodion .tab {
   border: 1px solid rgb(25, 45, 224);
 }
-.accrodion .tab label {
+.accrodion .tab > label {
   display: flex;
   background: rgb(54, 73, 245);
   color: #fff;
