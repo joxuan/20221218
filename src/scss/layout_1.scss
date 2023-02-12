@@ -47,3 +47,18 @@ body {
         }
     }
 }
+
+.join-form {
+    min-height: 100vh;
+    color: #fff;
+    background: #000;
+    background-image: url(../image/banner.jpeg);
+    background-size: cover;
+
+    .join-form-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 100vh;
+    }
+}
