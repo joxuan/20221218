@@ -36,8 +36,24 @@
             display: none;
         }
 
-        >input:checked+ .tab-content {
-            display: block;
+        >input:checked {
+            +label {
+                .open-icon {
+                    display: none;
+                }
+
+                .close-icon {
+                    display: block;
+                }
+            }
+
+            ~.tab-content {
+                display: block;
+            }
+        }
+
+        >input {
+            display: none;
         }
     }
 }

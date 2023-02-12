@@ -46,6 +46,15 @@
   padding: 10px;
   display: none;
 }
-.accrodion .tab > input:checked + .tab-content {
+.accrodion .tab > input:checked + label .open-icon {
+  display: none;
+}
+.accrodion .tab > input:checked + label .close-icon {
   display: block;
+}
+.accrodion .tab > input:checked ~ .tab-content {
+  display: block;
+}
+.accrodion .tab > input {
+  display: none;
 }/*# sourceMappingURL=accrodion.css.map */
