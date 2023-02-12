@@ -1,0 +1,16 @@
+@import 'reset';
+
+body {
+    background: #000;
+}
+
+.header {
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
