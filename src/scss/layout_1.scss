@@ -20,6 +20,20 @@ body {
 
         li {
             margin-right: 10px;
+            font-weight: 600;
+            text-align: center;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &:hover {
+                color: #372eb9;
+            }
+        }
+
+        .en {
+            font-size: 14px;
         }
     }
 }

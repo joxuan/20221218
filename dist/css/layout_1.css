@@ -38,4 +38,15 @@ body {
 }
 .header .menu li {
   margin-right: 10px;
+  font-weight: 600;
+  text-align: center;
+}
+.header .menu li:last-child {
+  margin-right: 0;
+}
+.header .menu li:hover {
+  color: #372eb9;
+}
+.header .menu .en {
+  font-size: 14px;
 }/*# sourceMappingURL=layout_1.css.map */
