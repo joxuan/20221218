@@ -161,6 +161,16 @@ body {
             position: absolute;
             z-index: 1;
         }
+
+        &:nth-child(even) {
+            .flow-text {
+                right: 50%;
+                left: unset;
+                margin-right: 72px;
+                margin-left: unset;
+                background-color: rgb(219, 191, 64);
+            }
+        }
     }
 
     .flow-circle {
