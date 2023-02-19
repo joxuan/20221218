@@ -43,10 +43,16 @@ a {
     outline: 0;
     padding: 0 15px;
     border-radius: 8px;
-}
+    font-size: 18px;
 
-.form-control-item {
-    margin-bottom: 15px;
+    &:focus {
+        background: #e06c1f;
+        color: #fff;
+
+        &::placeholder {
+            color: #bb5917;
+        }
+    }
 }
 
 .button {
@@ -54,9 +60,75 @@ a {
     border: 0;
     border-radius: 8px;
     font-weight: 800;
+    cursor: pointer;
 
     &.primary {
-        background: #8110c2;
+        background: #ec8d11;
         color: #fff;
+
+        &:hover {
+            background-color: #833d15;
+        }
+    }
+    &.danger {
+        background: rgb(218, 49, 27);
+        color: #fff;
+
+        &:hover {
+            background-color: rgb(172, 33, 15);
+        }
+    }
+}
+
+.text-right {
+    text-align: right;
+}
+
+.form-control-item {
+    margin-bottom: 15px;
+
+    &.form-control-mixed {
+        position: relative;
+
+        &.after {
+            .form-control {
+                padding-right: 80px;
+            }
+
+            .form-control-append {
+                right: -1px;
+
+                .button {
+                    border-top-left-radius: 0;
+                    border-bottom-left-radius: 0;
+                }
+            }
+        }
+
+        &.before {
+            .form-control {
+                padding-left: 80px;
+            }
+
+            .form-control-append {
+                left: -1px;
+
+                .button {
+                    border-top-right-radius: 0;
+                    border-bottom-right-radius: 0;
+                }
+            }
+        }
+    }
+
+    .form-control-append {
+        position: absolute;
+        top: 0;
+        height: 100%;
+
+        .button {
+            height: 100%;
+            display: inline-block;
+        }
     }
 }
