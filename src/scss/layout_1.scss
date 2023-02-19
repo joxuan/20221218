@@ -9,7 +9,6 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    
 
     .header-content {
         background: #fff;
@@ -26,22 +25,30 @@ body {
         list-style-type: none;
         display: flex;
 
+        // li {
+        //     margin-right: 10px;
+
+        //     &:last-child {
+        //         margin-right: 0;
+        //     }
+        // }
+
         li {
-            margin-right: 10px;
-            font-weight: 600;
+            margin-left: 10px;
+            font-weight: 700;
             text-align: center;
 
-            &:last-child {
-                margin-right: 0;
+            &:first-child {
+                margin-left: 0;
             }
 
             &:hover {
-                color: #372eb9;
+                color: rgb(47, 47, 255);
             }
         }
 
         .en {
-            font-size: 14px;
+            font-size: 12px;
             font-family: monospace;
             text-transform: uppercase;
         }
@@ -49,18 +56,18 @@ body {
 }
 
 .join-form {
-    min-height: 100vh;
     color: #fff;
     background: #000;
-    background-image: url(../image/banner.jpeg);
+    background-image: url(../images/banner.jpeg);
     background-size: cover;
 
     .join-form-content {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        // justify-content: space-between;
         min-height: 100vh;
-        
+
+
         .content-wrap {
             background: rgba(14, 50, 80, 0.9);
             display: flex;
@@ -78,11 +85,17 @@ body {
                     content: '';
                     border-right: 3px dashed #fff;
                     position: absolute;
-                    right: 10px;
+                    right: 0px;
                     top: 20px;
                     height: calc(100% - 40px);
                 }
             }
         }
+    }
+
+    .join-form-text {
+        font-size: 14px;
+        line-height: 30px;
+        text-align: justify;
     }
 }
