@@ -117,6 +117,16 @@ a {
   display: inline-block;
 }
 
+.form-control-append {
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+.form-control-append .button {
+  height: 100%;
+  display: inline-block;
+}
+
 body {
   background: #000;
 }
@@ -191,4 +201,12 @@ body {
   font-size: 14px;
   line-height: 30px;
   text-align: justify;
+}
+
+.process-flow {
+  background: #000;
+  background-image: url(../image/process.jpeg);
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
 }/*# sourceMappingURL=layout_1.css.map */

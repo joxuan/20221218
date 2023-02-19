@@ -132,3 +132,14 @@ a {
         }
     }
 }
+
+.form-control-append {
+    position: absolute;
+    top: 0;
+    height: 100%;
+
+    .button {
+        height: 100%;
+        display: inline-block;
+    }
+}

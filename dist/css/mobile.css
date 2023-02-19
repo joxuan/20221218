@@ -115,4 +115,14 @@ a {
 .form-control-item .form-control-append .button {
   height: 100%;
   display: inline-block;
+}
+
+.form-control-append {
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+.form-control-append .button {
+  height: 100%;
+  display: inline-block;
 }/*# sourceMappingURL=mobile.css.map */
