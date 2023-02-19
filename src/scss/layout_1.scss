@@ -147,20 +147,28 @@ body {
 }
 
 .flow {
+    margin-top: 50px;
+    position: relative;
+    padding: 20px 0;
+
+    &::after {
+        content: '';
+        border-left: 5px dashed #fff;
+        height: 100%;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 50%;
+        margin-left: -3px;
+    }
+
     .flow-item {
         display: flex;
         justify-content: center;
         align-items: center;
         position: relative;
         padding: 20px 0;
-
-        &::after {
-            content: '';
-            border-left: 5px dashed #fff;
-            height: 100%;
-            position: absolute;
-            z-index: 1;
-        }
+        margin-bottom: 15px;
 
         &:nth-child(even) {
             .flow-text {
@@ -168,7 +176,7 @@ body {
                 left: unset;
                 margin-right: 72px;
                 margin-left: unset;
-                background-color: rgb(219, 191, 64);
+                text-align: right;
             }
         }
     }
@@ -190,4 +198,10 @@ body {
         left: 50%;
         margin-left: 70px;
     }
+}
+
+.footer {
+    background: #fff;
+    padding: 50px;
+    text-align: right;
 }

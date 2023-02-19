@@ -246,26 +246,35 @@ body {
   padding-bottom: 40px;
 }
 
+.flow {
+  margin-top: 50px;
+  position: relative;
+  padding: 20px 0;
+}
+.flow::after {
+  content: "";
+  border-left: 5px dashed #fff;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 50%;
+  margin-left: -3px;
+}
 .flow .flow-item {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   padding: 20px 0;
-}
-.flow .flow-item::after {
-  content: "";
-  border-left: 5px dashed #fff;
-  height: 100%;
-  position: absolute;
-  z-index: 1;
+  margin-bottom: 15px;
 }
 .flow .flow-item:nth-child(even) .flow-text {
   right: 50%;
   left: unset;
   margin-right: 72px;
   margin-left: unset;
-  background-color: rgb(219, 191, 64);
+  text-align: right;
 }
 .flow .flow-circle {
   width: 35px;
@@ -282,4 +291,10 @@ body {
   border-radius: 10px;
   left: 50%;
   margin-left: 70px;
+}
+
+.footer {
+  background: #fff;
+  padding: 50px;
+  text-align: right;
 }/*# sourceMappingURL=layout_1.css.map */
