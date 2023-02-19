@@ -241,4 +241,38 @@ body {
 .process-flow .process-wrap {
   position: relative;
   z-index: 2;
+  min-height: 50vh;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.flow .flow-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 20px 0;
+}
+.flow .flow-item::after {
+  content: "";
+  border-left: 5px dashed #fff;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+}
+.flow .flow-circle {
+  width: 35px;
+  height: 35px;
+  border-radius: 50px;
+  background: rgb(223, 132, 29);
+  position: relative;
+  z-index: 2;
+}
+.flow .flow-text {
+  position: absolute;
+  background: rgb(218, 96, 75);
+  padding: 20px;
+  border-radius: 10px;
+  left: 50%;
+  margin-left: 70px;
 }/*# sourceMappingURL=layout_1.css.map */
