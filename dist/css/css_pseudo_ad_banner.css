@@ -7,6 +7,11 @@
   font-size: 16px;
 }
 
+html,
+body {
+  scroll-behavior: smooth;
+}
+
 .container {
   width: 80%;
   height: 100%;
