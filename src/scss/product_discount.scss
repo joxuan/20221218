@@ -18,9 +18,6 @@
         width: 100%;
         height: 200px;
         background-color: #ff5858;
-        background-image: url(../image/cat.jpg);
-        background-position: center;
-        background-size: contain;
         color: #fff;
         margin-bottom: 15px;
         display: flex;
@@ -28,6 +25,15 @@
         justify-content: center;
         position: relative;
         overflow: hidden;
+
+        .product-image-wrap {
+            background-position: center;
+            background-image: url(../image/cat.jpg);
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+            transition: 3s;
+        }
 
         .discount-bar {
             background: #ff5858;
@@ -43,6 +49,17 @@
             position: absolute;
             right: -105px;
             top: 10px;
+        }
+
+        &:hover {
+            .product-image-wrap {
+                transform: scale(1.5);
+            }
+
+            .discount-bar {
+                background-color: aquamarine;
+                color: #ff5858;
+            }
         }
     }
 
