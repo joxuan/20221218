@@ -1,0 +1,46 @@
+@import 'reset';
+
+.block {
+    width: 200px;
+    height: 200px;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    &.active {
+        animation-name: move;
+        animation-duration: 3s;
+        animation-fill-mode: both;
+        // transform: translate(80%);
+        // background-color: blue;
+        // animation-iteration-count: 3;
+        // animation-direction: reverse;
+        // animation-direction: alternate;
+        // animation-direction: alternate-reverse;
+    }
+}
+
+
+@keyframes move {
+    0% {
+        transform: translate(0);
+        background-color: #000;
+    }
+
+    20% {
+        transform: translate(0, 100px) rotate(45deg);
+    }
+
+    50% {
+        transform: translate(40%, 300px) rotate(180deg);
+        background-color: red;
+    }
+
+    100% {
+        transform: translate(80%) rotate(360deg);
+        background-color: blue;
+    }
+}
