@@ -1,8 +1,34 @@
 @import 'reset';
 
 body {
-    background-color: #3b62e0;
+    background-color: #2545d1;
     overflow: hidden;
+}
+
+.wrap {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    color: red;
+    background: rgba(0, 0, 0, 0.397);
+}
+
+.cloud-group {
+    // transform: translate(0, 0);
+    // animation-name: move;
+    // animation-duration: 2s;
+    // animation-iteration-count: infinite;
+    // animation-direction: alternate;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    z-index: 1;
 }
 
 .cloud {
@@ -10,11 +36,11 @@ body {
     height: 150px;
     background-color: #fff;
     border-radius: 10000px;
-    transform: translate(10%, 10vh);
     position: relative;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 
-    animation-name: move;
-    animation-duration: 2s;
+
 
     &::after {
         content: '';
@@ -34,17 +60,81 @@ body {
         height: 200px;
         border-radius: 200px;
         background: #fff;
-        left: 150px;
-        top: -90px;
+        left: 145px;
+        top: -92px;
+    }
+
+    &.s1 {
+        transform: translate(10%, 15vh);
+        animation-name: move-1;
+        animation-duration: 2s;
+    }
+
+    &.s2 {
+        transform: translate(100px, 25vh) scale(0.8);
+        animation-name: move-2;
+        animation-duration: 7s;
+    }
+
+    &.s3 {
+        transform: translate(150px, 25vh) scale(0.2);
+        animation-name: move-3;
+        animation-duration: 4s;
+    }
+
+    &.s4 {
+        transform: translate(50px, 35vh) scale(0.6);
+        animation-name: move-4;
+        animation-duration: 5s;
     }
 }
 
 @keyframes move {
     from {
-        transform: translateY(10%);
+        transform: translate(0, 0);
     }
 
     to {
-        transform: translateX(100%);
+        transform: translate(100%, 0);
+    }
+}
+
+@keyframes move-1 {
+    from {
+        transform: translate(10%, 15vh);
+    }
+
+    to {
+        transform: translate(100%, 15vh);
+    }
+}
+
+@keyframes move-2 {
+    from {
+        transform: translate(100px, 25vh) scale(0.8);
+    }
+
+    to {
+        transform: translate(100%, 25vh) scale(0.8);
+    }
+}
+
+@keyframes move-3 {
+    from {
+        transform: translate(150px, 25vh) scale(0.2);
+    }
+
+    to {
+        transform: translate(100%, 25vh) scale(0.2);
+    }
+}
+
+@keyframes move-4 {
+    from {
+        transform: translate(50px, 35vh) scale(0.6);
+    }
+
+    to {
+        transform: translate(100%, 35vh) scale(0.6);
     }
 }
