@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing page.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="css/layout_1.css">
 </head>
 
@@ -15,7 +16,7 @@
             <div class="header-content">
                 <div>
                     <a href="layout_1.html">
-                        <img src="image/logo.svg" alt="">
+                        <img src="images/logo.svg" alt="">
                     </a>
                 </div>
                 <div>
@@ -33,7 +34,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#courses-block">
+                            <a href="#">
                                 <div class="en">Courses</div>
                                 <div>課程總覽</div>
                             </a>
@@ -43,14 +44,14 @@
             </div>
         </div>
     </div>
-    <div class="join-form">
+    <div class="join-form wow animate__animated animate__rotateIn">
         <div class="container">
             <div class="join-form-content">
                 <div class="content-wrap">
                     <div class="left-side">
                         <h3 class="slogan">加入赫綵，人生精彩</h3>
                         <div class="join-form-text">
-                            每個人的一生中，幾乎可說碰到加入赫綵這件事，是必然會發生的。一般來講，我們都必須務必慎重的考慮考慮。若能夠洞悉加入赫綵各種層面的含義，勢必能讓思維再提高一個層級。加入赫綵可以說是有著成為常識的趨勢。愛因斯坦說過一句富有哲理的話，提出一個問題往往比解決一個問題更重要，因為解決問題也許僅是一個數學上或實驗上的技能而已。而提出新的問題新的可能性，從新的角度去看舊的問題，都需要有創造性的想像力，而且標誌著科學的真正進步。這段話讓我的心境提高了一個層次。
+                            對於一般人來說，加入赫綵究竟象徵著什麼呢？史美爾斯講過一段深奧的話，書籍把我們引入最美好的社會，使我們認識各個時代的偉大智者。這句話把我們帶到了一個新的維度去思考這個問題。斯賓諾莎曾說過一句意義深遠的話，最大的驕傲於最大的自卑都表示心靈的最軟弱無力。這句話反映了問題的急切性。
                         </div>
                     </div>
                     <div class="right-side">
@@ -75,34 +76,35 @@
             </div>
         </div>
     </div>
-    <div class="process-flow" id="courses-block">
+
+    <div class="process-flow">
         <div class="process-wrap">
             <h3 class="slogan">課程顧問</h3>
             <div class="flow">
-                <div class="flow-item">
-                    <div class="flow-circle" style="background: rgb(226, 122, 24);"></div>
-                    <div class="flow-text" style="background: rgb(66, 186, 190);">
+                <div class="flow-item wow animate__animated animate__slideInRight">
+                    <div class="flow-circle"></div>
+                    <div class="flow-text">
                         <h5>需求訪談</h5>
                         <div>深度了解需求，給予最適合的建議</div>
                     </div>
                 </div>
-                <div class="flow-item">
-                    <div class="flow-circle" style="background: rgb(238, 169, 42);"></div>
-                    <div class="flow-text" style="background: rgb(241, 180, 49);">
+                <div class="flow-item wow animate__animated animate__slideInLeft">
+                    <div class="flow-circle" style="background: yellow;"></div>
+                    <div class="flow-text" style="background: green;">
                         <h5>需求訪談</h5>
                         <div>深度了解需求，給予最適合的建議</div>
                     </div>
                 </div>
-                <div class="flow-item">
-                    <div class="flow-circle" style="background: rgb(199, 102, 22);"></div>
-                    <div class="flow-text" style="background: rgb(66, 186, 190);">
+                <div class="flow-item wow animate__animated animate__slideInRight">
+                    <div class="flow-circle"></div>
+                    <div class="flow-text">
                         <h5>需求訪談</h5>
                         <div>深度了解需求，給予最適合的建議</div>
                     </div>
                 </div>
-                <div class="flow-item">
-                    <div class="flow-circle" style="background: rgb(228, 158, 54);"></div>
-                    <div class="flow-text" style="background: rgb(241, 180, 49);">
+                <div class="flow-item wow animate__animated animate__slideInLeft">
+                    <div class="flow-circle" style="background: yellow;"></div>
+                    <div class="flow-text" style="background: green;">
                         <h5>需求訪談</h5>
                         <div>深度了解需求，給予最適合的建議</div>
                     </div>
@@ -117,5 +119,9 @@
         </div>
     </div>
 </body>
+<script src="js/wow.min.js"></script>
+<script>
+    new WOW().init();
+</script>
 
 </html>
