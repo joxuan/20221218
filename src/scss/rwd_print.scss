@@ -1,0 +1,59 @@
+@import 'reset';
+
+.title {
+    text-align: center;
+    font-size: 40px;
+    margin: 15px auto;
+}
+
+.student-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    th,
+    td {
+        border: 1px solid #dedede;
+        padding: 10px;
+    }
+
+    th {
+        background: #dedede;
+    }
+
+    tr td:last-child {
+        text-align: right;
+    }
+
+    tr:nth-child(even) {
+        background-color: #0d64aa;
+        color: #fff;
+    }
+}
+
+.fn {
+    margin: 10px auto;
+    text-align: right;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: 0;
+    font-weight: 700;
+    cursor: pointer;
+
+    &.danger {
+        background: #ff4b4b;
+        color: #fff;
+
+        &:hover {
+            background: #b42a2a;
+        }
+    }
+}
+
+@media print {
+    .fn {
+        display: none;
+    }
+}
