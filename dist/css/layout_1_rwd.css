@@ -372,4 +372,20 @@ body {
     margin-left: 0;
     margin-bottom: 15px;
   }
+  .join-form .join-form-content .content-wrap {
+    flex-direction: column;
+  }
+  .join-form .join-form-content .content-wrap > div:first-child::before {
+    border-right: 0;
+    border-bottom: 3px dashed #fff;
+    left: 20px;
+    bottom: 0;
+    width: calc(100% - 40px);
+  }
+  .join-form .join-form-content .content-wrap .left-side {
+    width: 100%;
+  }
+  .join-form .join-form-content .content-wrap .right-side {
+    width: 100%;
+  }
 }/*# sourceMappingURL=layout_1_rwd.css.map */

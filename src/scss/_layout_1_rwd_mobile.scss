@@ -94,4 +94,24 @@
         }
     }
 
+    .join-form .join-form-content .content-wrap {
+        flex-direction: column;
+
+        >div:first-child::before {
+            border-right: 0;
+            border-bottom: 3px dashed #fff;
+            left: 20px;
+            bottom: 0;
+            width: calc(100% - 40px);
+        }
+
+        .left-side {
+            width: 100%;
+        }
+
+        .right-side {
+            width: 100%;
+        }
+    }
+
 }
