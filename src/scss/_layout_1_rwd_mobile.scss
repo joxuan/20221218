@@ -1,1 +1,54 @@
-@media screen and(max-width: 600px) {}
+.mobile-icon {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    width: 30px;
+
+    >span {
+        // display: inline-block;
+        width: 30px;
+        height: 5px;
+        background: #000;
+        margin-bottom: 5px;
+        transition-property: background-color;
+        transition-duration: 0.5s;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &:hover {
+        >span {
+            background: red;
+        }
+    }
+}
+
+#mobile-menu-switch {
+    // display: none;
+
+    &:checked {
+        ~.mobile-icon {
+
+            >span {
+                position: absolute;
+
+                &:first-child {
+                    transform: rotate(45deg);
+                }
+
+                &:nth-child(2) {
+                    display: none;
+                }
+
+                &:last-child {
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {}

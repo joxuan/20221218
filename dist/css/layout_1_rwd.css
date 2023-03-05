@@ -302,4 +302,39 @@ body {
   background: #fff;
   padding: 50px;
   text-align: right;
+}
+
+.mobile-icon {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  width: 30px;
+}
+.mobile-icon > span {
+  width: 30px;
+  height: 5px;
+  background: #000;
+  margin-bottom: 5px;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+.mobile-icon > span:last-child {
+  margin-bottom: 0;
+}
+.mobile-icon:hover > span {
+  background: red;
+}
+
+#mobile-menu-switch:checked ~ .mobile-icon > span {
+  position: absolute;
+}
+#mobile-menu-switch:checked ~ .mobile-icon > span:first-child {
+  transform: rotate(45deg);
+}
+#mobile-menu-switch:checked ~ .mobile-icon > span:nth-child(2) {
+  display: none;
+}
+#mobile-menu-switch:checked ~ .mobile-icon > span:last-child {
+  transform: rotate(-45deg);
 }/*# sourceMappingURL=layout_1_rwd.css.map */
