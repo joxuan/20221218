@@ -307,6 +307,7 @@ body {
 .mobile-icon {
   position: relative;
   display: flex;
+  display: none;
   flex-direction: column;
   cursor: pointer;
   width: 30px;
@@ -316,7 +317,7 @@ body {
   height: 5px;
   background: #000;
   margin-bottom: 5px;
-  transition-property: background-color;
+  transition-property: background-color transform;
   transition-duration: 0.5s;
 }
 .mobile-icon > span:last-child {
@@ -326,15 +327,49 @@ body {
   background: red;
 }
 
+#mobile-menu-switch {
+  display: none;
+}
 #mobile-menu-switch:checked ~ .mobile-icon > span {
+  background-color: red;
   position: absolute;
 }
 #mobile-menu-switch:checked ~ .mobile-icon > span:first-child {
+  top: -5px;
   transform: rotate(45deg);
 }
 #mobile-menu-switch:checked ~ .mobile-icon > span:nth-child(2) {
   display: none;
 }
 #mobile-menu-switch:checked ~ .mobile-icon > span:last-child {
+  top: -5px;
   transform: rotate(-45deg);
+}
+
+@media screen and (max-width: 620px) {
+  .mobile-icon {
+    display: flex;
+  }
+  .header .menu {
+    display: none;
+  }
+  #mobile-menu-switch:checked ~ .menu {
+    display: block;
+  }
+  #mobile-menu-switch:checked ~ .menu.extend ul {
+    position: absolute;
+    top: 75px;
+    background: #fff;
+    width: 80%;
+    left: 10%;
+    border-radius: 10px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    padding-top: 15px;
+    flex-direction: column;
+  }
+  #mobile-menu-switch:checked ~ .menu.extend ul li {
+    margin-left: 0;
+    margin-bottom: 15px;
+  }
 }/*# sourceMappingURL=layout_1_rwd.css.map */

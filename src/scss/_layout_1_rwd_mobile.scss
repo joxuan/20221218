@@ -1,6 +1,7 @@
 .mobile-icon {
     position: relative;
     display: flex;
+    display: none;
     flex-direction: column;
     cursor: pointer;
     width: 30px;
@@ -11,7 +12,7 @@
         height: 5px;
         background: #000;
         margin-bottom: 5px;
-        transition-property: background-color;
+        transition-property: background-color transform;
         transition-duration: 0.5s;
 
         &:last-child {
@@ -27,15 +28,17 @@
 }
 
 #mobile-menu-switch {
-    // display: none;
+    display: none;
 
     &:checked {
         ~.mobile-icon {
 
             >span {
+                background-color: red;
                 position: absolute;
 
                 &:first-child {
+                    top: -5px;
                     transform: rotate(45deg);
                 }
 
@@ -44,6 +47,7 @@
                 }
 
                 &:last-child {
+                    top: -5px;
                     transform: rotate(-45deg);
                 }
             }
@@ -51,4 +55,43 @@
     }
 }
 
-@media screen and (max-width: 600px) {}
+
+@media screen and (max-width: 620px) {
+    .mobile-icon {
+        display: flex;
+    }
+
+    .header {
+        .menu {
+            display: none;
+        }
+    }
+
+    #mobile-menu-switch {
+        &:checked {
+            ~.menu {
+                display: block;
+
+                &.extend ul {
+                    position: absolute;
+                    top: 75px;
+                    background: #fff;
+                    width: 80%;
+                    left: 10%;
+                    border-radius: 10px;
+                    border-top-right-radius: 0;
+                    border-top-left-radius: 0;
+
+                    padding-top: 15px;
+                    flex-direction: column;
+
+                    li {
+                        margin-left: 0;
+                        margin-bottom: 15px;
+                    }
+                }
+            }
+        }
+    }
+
+}
