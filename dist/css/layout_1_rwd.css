@@ -153,22 +153,22 @@ body {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
-.header .menu {
+.header .menu ul {
   list-style-type: none;
   display: flex;
 }
-.header .menu li {
+.header .menu ul li {
   margin-left: 10px;
   font-weight: 700;
   text-align: center;
 }
-.header .menu li:first-child {
+.header .menu ul li:first-child {
   margin-left: 0;
 }
-.header .menu li:hover {
+.header .menu ul li:hover {
   color: rgb(47, 47, 255);
 }
-.header .menu .en {
+.header .menu ul .en {
   font-size: 12px;
   font-family: monospace;
   text-transform: uppercase;
