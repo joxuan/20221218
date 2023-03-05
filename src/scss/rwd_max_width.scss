@@ -1,0 +1,22 @@
+@import 'reset';
+
+.block {
+    background: #f7d850;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 800px) {
+    .block {
+        background: #284ae0;
+        color: #fff;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .block {
+        background: #b31d1d;
+        color: #fff;
+    }
+}
