@@ -56,7 +56,7 @@
 }
 
 
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 720px) {
     .mobile-icon {
         display: flex;
     }
@@ -151,6 +151,29 @@
 
         .right-side {
             width: 100%;
+        }
+    }
+
+    .flow {
+        &::after {
+            left: 30px;
+        }
+
+        .flow-item {
+            justify-content: flex-start;
+            padding-left: 12px;
+
+            &:nth-child(even) .flow-text {
+                left: 0;
+                right: unset;
+                margin-right: 0;
+                margin-left: 72px;
+                text-align: left;
+            }
+        }
+
+        .flow-text {
+            left: 0;
         }
     }
 
