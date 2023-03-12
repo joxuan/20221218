@@ -26,6 +26,42 @@
     let n5 = n1 + +n4;
     console.log(n5);
 
+    console.log(typeof n1.toString());
+    console.log(typeof n5);
+
+    let con = -1;
+
+    if (con) {
+        console.log(`${con} is ture.`)
+    }
+
+    let students = [10, 20, 30];
+
+    students.push(40);
+
+    console.log(students);
+
+    console.log(students[2]);
+
+    let scope = students.join(',');
+    console.log(scope, typeof scope, typeof students);
+
+    console.log(students.indexOf(200));
+
+    let index = students.indexOf(200);
+    console.log(index);
+    // students.splice(index, 1);
+    // console.log(students);
+
+    students.push(50);
+    students.push(60);
+    students.push(70);
+    students.push(80);
+
+    students.forEach((scope, index) => {
+        console.log(`index ${index}: ${scope}`);
+    })
+
 </script>
 
 <!-- <script src="js/js_base.js"></script> -->
