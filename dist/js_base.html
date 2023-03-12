@@ -12,14 +12,15 @@
 
 </body>
 <script>
-    let firstName = 'sun'
-    let lastName = 'joxuan'
+    let firstName = 'Lin';
+    let lastName = 'David';
     let fullName = firstName + ' ' + lastName;
     fullName = `${firstName} ${lastName}`; // ES6 用法，可讀性較高
     console.log(fullName);
 
+
     let n1 = 1;
-    let n2 = 1.25;
+    let n2 = 1.25
     let n3 = n1 + n2;
     let n4 = '10';
     // let n5 = n1 + parseInt(n4, 10);
@@ -29,38 +30,26 @@
     console.log(typeof n1.toString());
     console.log(typeof n5);
 
-    let con = -1;
 
-    if (con) {
-        console.log(`${con} is ture.`)
-    }
+    let students = [];
 
-    let students = [10, 20, 30];
+    students.push({
+        name: 'David Lin',
+        scope: 100
+    });
 
-    students.push(40);
+    students.push({
+        name: 'John Chen',
+        scope: 80
+    });
 
     console.log(students);
 
-    console.log(students[2]);
 
-    let scope = students.join(',');
-    console.log(scope, typeof scope, typeof students);
-
-    console.log(students.indexOf(200));
-
-    let index = students.indexOf(200);
-    console.log(index);
-    // students.splice(index, 1);
-    // console.log(students);
-
-    students.push(50);
-    students.push(60);
-    students.push(70);
-    students.push(80);
-
-    students.forEach((scope, index) => {
-        console.log(`index ${index}: ${scope}`);
+    students.forEach((student, index) => {
+        console.log(`index ${index}: ${student.name} score is ${student.score}`);
     })
+
 
 </script>
 
