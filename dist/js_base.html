@@ -12,10 +12,22 @@
 
 </body>
 <script>
-    let age = 18;
-    console.log(age);
+    let firstName = 'sun'
+    let lastName = 'joxuan'
+    let fullName = firstName + ' ' + lastName;
+    fullName = `${firstName} ${lastName}`; // ES6 用法，可讀性較高
+    console.log(fullName);
+
+    let n1 = 1;
+    let n2 = 1.25;
+    let n3 = n1 + n2;
+    let n4 = '10';
+    // let n5 = n1 + parseInt(n4, 10);
+    let n5 = n1 + +n4;
+    console.log(n5);
+
 </script>
 
-<script src="js/js_base.js"></script>
+<!-- <script src="js/js_base.js"></script> -->
 
 </html>
