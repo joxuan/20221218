@@ -1,11 +1,34 @@
 const calc = function (n1, n2) {
-    for (let i = 1; i <= n1; i++) {
-        // console.log(`i is ${i}`);
-        for (let j = 1; j <= n2; j++) {
-            // console.log(`j is ${j}`);
-            console.log(`${i} x ${j} = ${i * j}`)
+    let tbody = document.querySelector('#display-table tbody');
+    let content = '';
+    // for (let i = 1; i <= n1; i++) {
+    //     // console.log(`i is ${i}`);
+    //     content += '<tr>';
+
+    //     for (let j = 1; j <= n2; j++) {
+
+    //         content += `<td>${j}</td>`;
+
+
+    //         // console.log(`j is ${j}`);
+    //         console.log(`${i} x ${j} = ${i * j}`);
+    //     }
+
+    //     content += '</tr>';
+    // }
+
+    // 內外圈反轉，配合 UI 呈現
+    for (let i = 1; i <= n2; i++) {
+        content += `<tr><td>${i}</td>`;
+
+        for (let j = 1; j <= n1; j++) {
+            content += `<td>${i * j}</td>`;
         }
+
+        content += '</tr>';
     }
+
+    tbody.innerHTML = content;
 }
 
 const makeThead = function (n1) {
