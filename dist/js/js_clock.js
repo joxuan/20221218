@@ -1,4 +1,4 @@
-let timer = setInterval(() => {
+const update = () => {
     let d = new Date();
     let hh = d.getHours();
     let mm = d.getMinutes();
@@ -24,4 +24,32 @@ let timer = setInterval(() => {
     s2.innerHTML = ss.substr(1, 1);
 
     console.log(hh, mm, ss);
+}
+
+const update2 = () => {
+    let d = new Date();
+    let hh = d.getHours();
+    let mm = d.getMinutes();
+    let ss = d.getSeconds();
+
+
+    hh = hh.toString().padStart(2, '0');
+    mm = mm.toString().padStart(2, '0');
+    ss = ss.toString().padStart(2, '0');
+
+    let clock = `${hh}:${mm}:${ss}`;
+    let clocks = clock.split('');
+
+    let dom = document.querySelector('.clock');
+
+    clocks.forEach((s, i) => {
+        let c = dom.querySelector(`div:nth-child(${i + 1})`);
+        c.innerHTML = s;
+    })
+}
+
+update2();
+
+let timer = setInterval(() => {
+    update2();
 }, 1000)
