@@ -6,17 +6,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        *,
+        *::before,
+        *::after {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .page {
+            width: 100%;
+            height: 100vh;
+            background: #dedede;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+    </style>
 </head>
 
 <body>
-    <ul id="menu">
+    <!-- <ul id="menu">
         <li>1</li>
         <li>2</li>
         <li>3</li>
         <li>4</li>
     </ul>
+    <button id="add-btn">add li</button> -->
+    <div class="page">
+        <button id="stop-btn">Stop</button>
+        <form action="" id="register-form">
+            <input type="text" name="test" id="input-test">
+            <button id="submit-btn">Submit</button>
+        </form>
+    </div>
+    <div class="page">
+        <div>
+            2
+        </div>
 
-    <button id="add-btn">add li</button>
+        <a href="#" id="note">Show Note</a>
+    </div>
+    <div class="page">3</div>
 </body>
 <script src="js/js_event_bu.js"></script>
 
