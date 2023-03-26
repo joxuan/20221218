@@ -1,0 +1,39 @@
+@import 'reset';
+
+
+.number-block {
+    margin-top: 10px;
+
+    input {
+        border: 1px solid #000;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+.fn {
+    text-align: right;
+}
+
+#response {
+    border: 1px solid #dedede;
+    padding: 20px;
+    margin-top: 20px;
+    display: none;
+
+    &.active {
+        display: block;
+    }
+
+    &.fail {
+        >span {
+            color: red;
+        }
+    }
+
+    >span {
+        font-size: 30px;
+        font-weight: 700;
+        color: blue;
+    }
+}
