@@ -11,7 +11,10 @@
 
 <body>
     <div id="app">
-        <button @click="doFetch">AJAX</button>
+        <button @click="doPost">AJAX</button>
+        <button @click="doPromise">Promise</button>
+        <input type="file" ref="uploadFile">
+        <button @click="doUpload">Upload</button>
         <div>
             <h1>Response</h1>
             <div>{{ message }}</div>
@@ -52,6 +55,76 @@
                         this.message = data;
                         console.log(this.message);
                     })
+            },
+            doPost() {
+                let api = 'https://book.niceinfos.com/frontend/api/';
+                let params = {
+                    action: 'demo',
+                    data: { a: 1, b: 2 },
+                } // ?action=demo&data={a: 1, b: 2}
+
+
+                let options = {
+                    method: 'POST',
+                    body: JSON.stringify(params),
+                }
+
+                fetch(api, options)
+                    .then(response => {
+                        return response.text();
+                        return response.json(); // 如果資料符合 JSON 格式，自動使用 JSON.parse 轉成 Object
+                    })
+                    .then(data => {
+                        // this.message = JSON.parse(data);
+                        this.message = data;
+                        console.log(this.message);
+                    });
+            },
+            doPromise() {
+                console.log('run promise');
+                let num = 0;
+                this.calc()
+                    .then(response => {
+                        num = response;
+                        console.log(num);
+                    })
+
+            },
+            calc() {
+                return new Promise((reslove, reject) => {
+                    setTimeout(() => {
+                        reslove(10);
+                    }, 3000)
+                });
+            },
+            doUpload() {
+                let fileDom = this.$refs.uploadFile;
+                let file = fileDom.files[0];
+                if (!file) {
+                    return;
+                }
+
+                let form = new FormData();
+                form.append('action', 'upload');
+                form.append('file', file);
+
+                let options = {
+                    method: 'POST',
+                    body: form,
+                }
+
+                let api = 'https://book.niceinfos.com/frontend/api/';
+                fetch(api, options)
+                    .then(response => {
+                        return response.text();
+                        return response.json(); // 如果資料符合 JSON 格式，自動使用 JSON.parse 轉成 Object
+                    })
+                    .then(data => {
+                        // this.message = JSON.parse(data);
+                        this.message = data;
+                        console.log(this.message);
+                    });
+
             }
         }
     }).mount('#app')
