@@ -14,18 +14,29 @@ item.addEventListener('click', (e) => {
 
     // 當為 li 時表示處理該項目，過濾點到 UL
     if (tag == 'li') {
+        let index = target.dataset.index;
         let isDone = target.classList.contains('delete');
         if (isDone) {
             // 變成未完成
             target.classList.remove('delete');
             target.querySelector('input').checked = false;
+            setStatus(index, 'pending');
         } else {
             // 變成完成
             target.classList.add('delete');
             target.querySelector('input').checked = true;
+            setStatus(index, 'done');
         }
     }
 })
+
+const setStatus = (index, status) => {
+    let todo = database.get();
+    if (todo[index]) {
+        todo[index].status = status;
+        database.set(todo);
+    }
+}
 
 const appendItem = (name) => {
     let li = document.createElement('li');
@@ -59,12 +70,22 @@ const addItem = () => {
     // appendItem(name);
     appendItemES6(name);
     reset();
+    save(name)
 
     // 寫法二
     // if (valid()) {
     //     let name = itemName.value;
     //     appendItemES6(name);
     // }
+}
+
+const save = (name) => {
+    let todoDataRestore = database.get();
+    todoDataRestore.push({
+        status: 'pending',
+        value: name,
+    });
+    database.set(todoDataRestore);
 }
 
 addBtn.addEventListener('click', () => {
@@ -105,17 +126,37 @@ const reset = () => {
 // localStorage.setItem('todo', todoDataToString);
 // console.table(todoData);
 
+const database = {
+    get() {
+        try {
+            let todo = localStorage.getItem('todo');
+            if (!todo) {
+                todo = [];
+            } else {
+                todo = JSON.parse(todo);
+            }
+            return todo;
+        } catch (e) {
+            return [];
+        }
+    },
+    set(data) {
+        data = JSON.stringify(data);
+        localStorage.setItem('todo', data);
+    }
+}
+
 const makeUI = () => {
-    let todoDataRestore = JSON.parse(localStorage.getItem('todo'));
+    let todoDataRestore = database.get();
     console.log('%c 還原', 'color: red; font-size: 30px;');
     console.table(todoDataRestore);
 
     let li = '';
 
-    todoDataRestore.forEach(item => {
+    todoDataRestore.forEach((item, index) => {
         let checked = item.status == 'done' ? 'checked' : '';
         let liClass = checked ? 'delete' : '';
-        li += `<li class="${liClass}">
+        li += `<li class="${liClass}" data-index="${index}">
             <input type="checkbox" ${checked}>
             <div>${item.value}</div>
         </li>`
