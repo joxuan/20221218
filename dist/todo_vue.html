@@ -6,12 +6,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TODO Vue</title>
+    <link rel="stylesheet" href="css/todo.css">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-
 </head>
 
 <body>
-    <div id="app">{{ message }}</div>
+    <div id="app">
+        <div class="container">
+            <div class="input-group">
+                <label for="">Item</label>
+                <input type="text" ref="itemName">
+                <button @click="addItem">ADD</button>
+            </div>
+            <hr>
+            <div>
+                <ul id="item">
+                    <!-- <li>
+                        <input type="checkbox">
+                        <div>11111</div>
+                    </li>
+                    <li class="delete">
+                        <input type="checkbox">
+                        <div>11111</div>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+    </div>
 </body>
 <script>
     const { createApp } = Vue
@@ -19,10 +40,29 @@
     createApp({
         data() {
             return {
-                message: 'Hello Vue!'
+            }
+        },
+        methods: {
+            addItem() {
+                if (!this.valid()) {
+                    this.reset();
+                    return;
+                }
+                this.reset();
+            },
+            valid() {
+                return this.$refs.itemName && this.$refs.itemName.value;
+            },
+            reset() {
+                let itemName = this.$refs.itemName;
+                if (itemName) {
+                    itemName.value = '';
+                    itemName.focus();
+                }
             }
         }
     }).mount('#app')
 </script>
+
 
 </html>
