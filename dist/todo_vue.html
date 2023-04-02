@@ -15,20 +15,17 @@
         <div class="container">
             <div class="input-group">
                 <label for="">Item</label>
-                <input type="text" ref="itemName">
+                <input type="text" ref="itemName" @keyup.enter="addItem">
                 <button @click="addItem">ADD</button>
             </div>
             <hr>
             <div>
                 <ul id="item">
-                    <!-- <li>
-                        <input type="checkbox">
-                        <div>11111</div>
+                    <li v-for="(item, itemIndex) in items" @click="changeStatus(itemIndex)"
+                        :class="{delete: item.status == 'done'}">
+                        <input type="checkbox" :checked="item.status == 'done'">
+                        <div>{{ item.value }}</div>
                     </li>
-                    <li class="delete">
-                        <input type="checkbox">
-                        <div>11111</div>
-                    </li> -->
                 </ul>
             </div>
         </div>
@@ -40,6 +37,10 @@
     createApp({
         data() {
             return {
+                items: [
+                    { status: 'pending', value: 1111 },
+                    { status: 'done', value: 2222 },
+                ],
             }
         },
         methods: {
@@ -48,6 +49,7 @@
                     this.reset();
                     return;
                 }
+                // 新增資料
                 this.reset();
             },
             valid() {
@@ -59,6 +61,11 @@
                     itemName.value = '';
                     itemName.focus();
                 }
+            },
+            changeStatus(index) {
+                let status = this.items[index].status == 'pending' ? 'done' : 'pending';
+                this.items[index].status = status;
+                console.table(this.items);
             }
         }
     }).mount('#app')
