@@ -17,6 +17,8 @@
                 <label for="">Item</label>
                 <input type="text" v-model="itemValue" ref="itemName" @keyup.enter="addItem">
                 <button @click="addItem">ADD</button>
+                <button @click="doSaveCloud">雲端儲存</button>
+                <button @click="doLoadCloud">雲端載入</button>
             </div>
             <hr>
             <div>
