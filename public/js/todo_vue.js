@@ -53,65 +53,82 @@ createApp({
             this.save();
         },
         restore() {
-            try {
-                let todo = localStorage.getItem(this.storageKey);
-                if (!todo) {
-                    todo = [];
-                } else {
-                    todo = JSON.parse(todo);
-                }
-                this.items = todo;
-            } catch (e) {
-                this.items = [];
-            }
+            // try {
+            //     let todo = localStorage.getItem(this.storageKey);
+            //     if (!todo) {
+            //         todo = [];
+            //     } else {
+            //         todo = JSON.parse(todo);
+            //     }
+            //     this.items = todo;
+            // } catch (e) {
+            //     this.items = [];
+            // }
         },
         save() {
-            let data = JSON.stringify(this.items);
-            localStorage.setItem(this.storageKey, data);
+            // let data = JSON.stringify(this.items);
+            // localStorage.setItem(this.storageKey, data);
+            write(this.items, 'todo');
         },
         doSaveCloud() {
-            let uid = prompt('請輸入 uid');
-            if (!uid) {
-                return;
-            }
+            Swal.fire({
+                title: '輸入 UID',
+                input: 'text',
+            }).then(rep => {
+                let uid = rep.value
 
-            let params = {
-                action: 'todo',
-                uid: uid,
-                data: this.items
-            }
+                let params = {
+                    action: 'todo',
+                    uid: uid,
+                    data: this.items
+                }
 
-            let options = {
-                method: 'POST',
-                body: JSON.stringify(params),
-            }
+                let options = {
+                    method: 'POST',
+                    body: JSON.stringify(params),
+                }
 
-            fetch(this.api, options)
-                .then(response => {
-                    return response.text();
-                })
-                .then(data => {
-                    console.log(data);
-                })
+                fetch(this.api, options)
+                    .then(response => {
+                        return response.text();
+                    })
+                    .then(data => {
+                        console.log(data);
+                    })
+            })
         },
         doLoadCloud() {
-            let uid = prompt('請輸入 uid');
-            if (!uid) {
-                return;
-            }
+            Swal.fire({
+                title: '輸入 UID',
+                input: 'text',
+            }).then(rep => {
+                let uid = rep.value
+                console.log(uid);
 
-            let api = `${this.api}?action=todo&uid=${uid}`;
-            fetch(api)
-                .then(response => {
-                    return response.text();
-                })
-                .then(data => {
-                    data = JSON.parse(data);
-                    this.items = data.data;
-                })
+                if (!uid) {
+                    return;
+                }
+
+                let api = `${this.api}?action=todo&uid=${uid}`;
+                fetch(api)
+                    .then(response => {
+                        return response.text();
+                    })
+                    .then(data => {
+                        data = JSON.parse(data);
+                        this.items = data.data;
+                    })
+            })
         }
     },
     mounted() {
         this.restore();
+        listen('todo', (value) => {
+            console.table(value);
+            if (!value) {
+                value = [];
+            }
+            this.items = value;
+        })
     }
 }).mount('#app')
